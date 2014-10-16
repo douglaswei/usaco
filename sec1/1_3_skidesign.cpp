@@ -42,10 +42,14 @@ int main() {
         }
     }
 
+    for (int idx = 0; idx < MAX_HILL_HEIGHT; ++idx) {
+        printf("level:[%d] count[%d]\n", idx, hill_height_arr[idx]);
+    }
+
     for (int lower_bound = min_height; lower_bound <= max_height - DIFF; ++lower_bound) {
         int upper_bound = lower_bound + DIFF;
         int res_try = 0;
-        for (int idx = min_height; idx <= max_height; ++idx) {
+        for (int idx = min_height; idx <= max_height ; ++idx) {
             if (hill_height_arr[idx] == 0 || (idx >= lower_bound && idx <= upper_bound)) {
                 continue;
             }
